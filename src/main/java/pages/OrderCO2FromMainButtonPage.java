@@ -20,23 +20,34 @@ public class OrderCO2FromMainButtonPage extends BasePage{
     private WebElement orderCO2PageTitleElement;
 
     @FindBy(xpath = "//*[text()[contains(.,'חד פעמי')]]")
-    private WebElement oneTimeUseBaloonButton;
+    private WebElement disposableUseBaloonButton;
 
     @FindBy(xpath = "//*[text()[contains(.,'4 מכלים ב- 145')]]")
-    private WebElement oneTimeUse4BaloonOrderButton;
+    private WebElement disposableUse4BaloonOrderButton;
 
     @FindBy(xpath = "//*[text()[contains(.,'לסיכום הזמנה')]]")
     private WebElement endOrderButton;
 
+
+
+    //Verify title
+    public void verifyTitleOnOrderPage(String expected){
+        assertThat(orderCO2PageTitleElement.getText()).as("Wrong title").isEqualTo(expected);
+
+    }
+
     //Open site for ordering inventory for Tami4 water bar
-    public void openOrderFormForOneUseBaloonCO2(String expected) throws InterruptedException {
+    public void openOrderFormForDisposableBaloonCO2(String expected) throws InterruptedException {
         Thread.sleep(3000);
         orderCO2MainButton.click();
         Thread.sleep(3000);
-        assertThat(orderCO2PageTitleElement.getText()).as("Wrong title").isEqualTo(expected);
-        oneTimeUseBaloonButton.click();
-        oneTimeUse4BaloonOrderButton.click();
+        //assertThat(orderCO2PageTitleElement.getText()).as("Wrong title").isEqualTo(expected);
+        verifyTitleOnOrderPage(expected);
+        disposableUseBaloonButton.click();
+        disposableUse4BaloonOrderButton.click();
         Thread.sleep(3000);
         endOrderButton.click();
     }
-}
+
+    }
+

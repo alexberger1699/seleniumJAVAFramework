@@ -11,7 +11,7 @@ public class OrderCO2FromMainButtonTest extends BaseTest{
     public void orderCO2FromTheSite() throws InterruptedException {
         OrderCO2FromMainButtonPage orderCO2FromMainButtonPage = new OrderCO2FromMainButtonPage();
 
-        orderCO2FromMainButtonPage.openOrderFormForOneUseBaloonCO2("הזמנת מכלי הגזה");
+        orderCO2FromMainButtonPage.openOrderFormForDisposableBaloonCO2("הזמנת מכלי הגזה");
 
     }
 

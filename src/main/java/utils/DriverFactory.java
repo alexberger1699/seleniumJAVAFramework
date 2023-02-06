@@ -13,7 +13,7 @@ public class DriverFactory {
     private final static String DRIVER_PATH = "/Users/alex/seleniumFramework/src/resources/";
 
     public static WebDriver getDriver(Browser browser) {
-        File file;
+//        File file;
 //        switch (browser) {
 //            case CHROME:
 //                file = new File(DRIVER_PATH + "chromedriver");

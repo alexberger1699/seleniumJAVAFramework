@@ -7,7 +7,8 @@ import tests.BaseTest;
 import static tests.BaseTest.getDriver;
 
 public abstract class BasePage {
-     WebDriver driver;
+     private static WebDriver driver;
+
 
     public BasePage(){
         this.driver = getDriver();

@@ -15,9 +15,9 @@ public class SearchTest extends BaseTest{
 
         @Test(dataProvider = "dataProvider")
         public void  openGoogleComInChromeTest1(String text) throws InterruptedException {
-//                steps.executeSearchByKeyword(text)
-//                        .verifyThatTopResultContainCorrectText("The Selenium Browser Automation Project")
-//                        .verifyThatTopResultContainProperAttributeText("LC20lb MBeuO DKV0Md");
+                steps.executeSearchByKeyword(text)
+                        .verifyThatTopResultContainCorrectText("The Selenium Browser Automation Project")
+                        . verifyThatTopResultContainProperAttributeText("LC20lb MBeuO DKV0Md");
 
 
         }

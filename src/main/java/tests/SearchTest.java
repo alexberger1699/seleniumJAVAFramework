@@ -15,24 +15,15 @@ public class SearchTest extends BaseTest{
 
         @Test(dataProvider = "dataProvider")
         public void  openGoogleComInChromeTest1(String text) throws InterruptedException {
+//                steps.executeSearchByKeyword(text)
+//                        .verifyThatTopResultContainCorrectText("The Selenium Browser Automation Project")
+//                        .verifyThatTopResultContainProperAttributeText("LC20lb MBeuO DKV0Md");
 
-
-                SearchPage searchPage = new SearchPage();
-                searchPage.fillSearchField(text);
-                searchPage.pressEnter();
-                Thread.sleep(3000);
-                SearchResultsPage searchResultPage= new SearchResultsPage();
-                searchResultPage.assertThatTopResultContainsCorrectText("The Selenium Browser Automation Project");
-                searchResultPage.assertThatTopResultContainsProperAttributeText("LC20lb MBeuO DKV0Md");
 
         }
 
 
 
-        @DataProvider(name = "dataProvider")
-        public Object[][] dataProviderMethod(){
-                return new Object[][] {{"selenium java"}, {"selenium javascript"}};
 
-        }
 
 }

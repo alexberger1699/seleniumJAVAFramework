@@ -7,7 +7,7 @@ import tests.BaseTest;
 import static tests.BaseTest.getDriver;
 
 public abstract class BasePage {
-    WebDriver driver;
+     WebDriver driver;
 
     public BasePage(){
         this.driver = getDriver();

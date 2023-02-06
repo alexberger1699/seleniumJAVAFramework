@@ -2,35 +2,41 @@ package tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.DataProvider;
+import org.testng.annotations.*;
+import steps.SearchSteps;
 
 import java.io.File;
 
 public class BaseTest {
 
 
-    private static WebDriver driver;
+    public static WebDriver driver;
+   // SearchSteps steps;
 
     public static WebDriver getDriver() {
         return driver;
     }
-        @BeforeClass
-    public void setup(){
+
+
+        @BeforeMethod
+        public void setup(){
         File file = new File("/Users/alex/seleniumFramework/src/resources/chromedriver");
         System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
         driver = new ChromeDriver();
-        driver.navigate().to("https://www.google.com/");
+        driver.navigate().to("https://www.tami4.co.il/");
+    //    steps = new SearchSteps();
 
     }
-
-    @AfterMethod
-    public void tearDown(){
-        driver.navigate().back();
-       // driver.quit();
+//
+//    @AfterMethod
+//    public void tearDown(){
+//        //driver.navigate().back();
+//       //driver.quit();
+//
+//    }
+    @DataProvider(name = "dataProvider")
+    public Object[][] dataProviderMethod(){
+        return new Object[][] {{"selenium java"}, {"selenium javascript"}};
 
     }
-
 }

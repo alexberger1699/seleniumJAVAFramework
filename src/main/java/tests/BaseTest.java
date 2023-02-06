@@ -6,6 +6,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import steps.SearchSteps;
+import utils.Browser;
+import utils.DriverFactory;
 
 import java.io.File;
 
@@ -22,9 +24,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void setup() {
-        File file = new File("/Users/alex/seleniumFramework/src/resources/chromedriver");
-        System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
-        driver = new ChromeDriver();
+        driver = DriverFactory.getDriver(Browser.CHROME);
         driver.navigate().to("https://www.tami4.co.il/");
         steps = new SearchSteps();
 

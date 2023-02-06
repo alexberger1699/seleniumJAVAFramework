@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+import steps.SearchSteps;
 import tests.BaseTest;
 
 import static tests.BaseTest.getDriver;

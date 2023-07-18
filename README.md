@@ -1,4 +1,4 @@
-# seleniumFramework
+# seleniumJAVAFramework
 Basic framework for creating automation testing, based on Selenium and patterns like POM,
 page factory, 
 browser, 
